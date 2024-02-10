@@ -1,0 +1,155 @@
+*{
+    /* outline: 1px solid green; */
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-variant: #000;
+    --bg: #1a1a1a;
+    --bg-light: #424242;
+    --color-white: #fff;
+    --color-white-variant: #b6b6b6;
+    --color-red: #ff0000;
+    --color-blue: #0000ff;
+}
+
+body{
+    width: 100dvw;
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+    font-family: Arial;
+}
+
+body.light{
+    --bg-variant: #fff;
+    --bg: #424242;
+    --bg-light: #b6b6b6;
+    --color-white: #000;
+    --color-white-variant: #424242;
+    --color-red: #ff0000;
+    --color-blue: #0000ff;
+}
+
+.container{
+    height: 80%;
+    width: 400px;
+    display: grid;
+    grid-template-rows: 39% 59%;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: var(--bg);
+    position: relative;
+}
+
+.theme{
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    background: var(--bg-variant);
+}
+
+.screen{
+    display: grid;
+    grid-template-rows: 60% 40%;
+    background: var(--bg-light);
+    border-radius: 10px;
+}
+
+.screen1, .screen2{
+    color: var(--color-white-variant);
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    padding: 10px;
+    overflow-x: hidden;
+}
+
+.screen2{
+    font-size: 2rem;
+}
+
+.keys{
+    display: grid;
+    grid-template-columns: 59% 39%;
+    gap: 2%;
+    color: var(--color-white);
+}
+
+.section1{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.section2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.key{
+    background: var(--bg-variant);
+    border-radius: 5px;
+    display: grid;
+    place-items: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-white);
+    border: none;
+}
+
+.section1 .key:last-child{
+    background: var(--color-blue);
+}
+
+.section1 .key:last-child:hover, .section2 .key:last-child:hover{
+    opacity: 0.5;
+}
+
+.section2 .key:last-child{
+    background: var(--color-red);
+}
+
+.key:hover{
+    background: var(--bg-light);
+}
+
+span{
+    position: fixed;
+    bottom: 30px;
+}
+
+@media (max-width: 480px) {
+    .container{
+        width: 90%;
+        height: 70%;
+        border-radius: 10px;
+    }
+
+    .theme{
+        transform: scale(0.7);
+    }
+
+    .key{
+        font-size: 1rem;
+    }
+
+    .screen1{
+        font-size: 1.5rem;
+    }
+
+    .screen2{
+        font-size: 1rem;
+    }
+}
